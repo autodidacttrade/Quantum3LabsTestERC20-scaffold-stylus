@@ -261,12 +261,27 @@ Visit our [Troubleshooting section](https://arb-stylus.github.io/scaffold-stylus
 
 ## Documentation
 
-Visit our [docs](https://arb-stylus.github.io/scaffold-stylus-docs/) to learn how to start building with Scaffold-Stylus.
+# Quantum3LabsTestERC20 Test Project - Jim Soria Rivera
 
-To learn more about its features, check out our [website](https://www.scaffoldstylus.com/).
+This project is a ERC-20 Test Job Application.
+
+# First Part:
+
+1. Choose the ERC-20 Test Project located in: "https://www.scaffoldstylus.com".
+2. Creation of the project in my local machine: "C:\Autodidact Trade\Crypto Portfolio Jim\Visual Code   Projects\Quantum3Labs\Quantum3LabsTestERC20>".
+3. Upload of this Project in my GitHub: "https://github.com/autodidacttrade/Quantum3LabsTestERC20-scaffold-stylus".
+4. Installation of the Hardhat 2.0, JavaScript and libraries like OpenZepellin to create a ERC-20 Smart Contract.
+5. Creation of the file ETHXRP.sol to create the ERC-20.
+6. Creation of the file .env to setup the environment variables.
+7. Implementation of the file hardhat.config.js to call the environment parameters.
+8. Creation of the file deploy.js to deploy the ERC-20 contract in the blockchain.
+9. Verification of the contract in Sepolia Testnet with the Etherscan: "https://sepolia.etherscan.io/address/0x8F423758Ac39B6962CB052c819d5F1761768fCb2"
+10. Addition of the contract address in my MetaMask wallet to import the token EXRP  
+
 
 ## Contributing to Scaffold-Stylus
 
 We welcome contributions to Scaffold-Stylus!
 
 Please see [CONTRIBUTING.md](https://github.com/Arb-Stylus/scaffold-stylus/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-Stylus.
+
