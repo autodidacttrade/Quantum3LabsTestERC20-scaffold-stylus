@@ -11,6 +11,11 @@
   <p id="exrpBalance">EXRP Amount: ...</p>
   <p id="xrpPrice">EXRP USD Price: ...</p>
 
+  <h2>Mint EXRP Tokens</h2>
+  <input type="number" id="mintAmount" placeholder="Amount to mint" />
+  <button id="mintButton">Mint EXRP</button>
+  <p id="mintStatus"></p>
+
   <script>
     async function loadBalances() {
       try {
@@ -35,14 +40,51 @@
         document.getElementById("xrpPrice").textContent = `XRP USD: $${data.priceUSD}`;
       } catch(err) {
         console.error(err);
-        document.getElementById("xrpPrice").textContent = "Error cargando precio";
+        document.getElementById("xrpPrice").textContent = "Error loading prices";
       }
     }
 
     loadPrice();
   </script>
+
+  <script>
+    const mintButton = document.getElementById("mintButton");
+    const mintAmountInput = document.getElementById("mintAmount");
+    const mintStatus = document.getElementById("mintStatus");
+
+    mintButton.addEventListener("click", async () => {
+      const amount = mintAmountInput.value;
+      if (!amount || Number(amount) <= 0) {
+        mintStatus.textContent = "Enter a valid amount";
+        return;
+      }
+
+      mintStatus.textContent = "Minting...";
+
+      try {
+        const res = await fetch("/mint", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          mintStatus.textContent = `✅ Mint Successful: ${data.amount} EXRP (tx: ${data.txHash})`;
+          // Opcional: actualizar balances después del mint
+          loadBalances();
+        } else {
+          mintStatus.textContent = `Error: ${data.error || "Unknowledge"}`;
+        }
+      } catch (err) {
+        console.error(err);
+        mintStatus.textContent = "Error connecting with server";
+      }
+    });
+  </script> 
 </body>
 </html>
+
 
 
 
