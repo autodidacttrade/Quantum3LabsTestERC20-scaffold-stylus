@@ -276,7 +276,11 @@ This project is a ERC-20 Test Job Application.
 7. Implementation of the file hardhat.config.js to call the environment parameters.
 8. Creation of the file deploy.js to deploy the ERC-20 contract in the blockchain.
 9. Verification of the contract in Sepolia Testnet with the Etherscan: "https://sepolia.etherscan.io/address/0x8F423758Ac39B6962CB052c819d5F1761768fCb2"
-10. Addition of the contract address in my MetaMask wallet to import the token EXRP  
+10. Addition of the contract address in my MetaMask wallet to import the token EXRP 
+
+# Second Part:
+
+11. Creation of the node to read and replicate the XRP price, and installation of the library "express".
 
 
 ## Contributing to Scaffold-Stylus
