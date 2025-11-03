@@ -3,7 +3,6 @@ require("dotenv").config();
 
 const SEPOLIA_URL = process.env.API_SEPOLIA_TESTNET_URL + process.env.API_SEPOLIA_TESTNET_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY; 
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 
 /** @type import('hardhat/config').HardhatUserConfig */

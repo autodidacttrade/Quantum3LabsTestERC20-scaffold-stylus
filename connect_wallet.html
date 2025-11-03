@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Connect to Wallet - EXRP</title>
+</head>
+<body>
+  <h1>Wallet Information</h1>
+  <p id="walletAddress">Loading...</p>
+  <p id="ethBalance">ETH Sepolia: ...</p>
+  <p id="exrpBalance">EXRP Amount: ...</p>
+  <p id="xrpPrice">EXRP USD Price: ...</p>
+
+  <script>
+    async function loadBalances() {
+      try {
+        const res = await fetch("/balances");
+        const data = await res.json();
+
+        document.getElementById("walletAddress").textContent = `Address: ${data.address}`;
+        document.getElementById("ethBalance").textContent = `ETH: ${data.eth}`;
+        document.getElementById("exrpBalance").textContent = `${data.token.symbol}: ${data.token.formatted}`;
+      } catch (err) {
+        console.error(err);
+        document.getElementById("walletAddress").textContent = "Error loading balances";
+      }
+    }
+
+    loadBalances();
+
+    async function loadPrice() {
+      try {
+        const res = await fetch("/price");
+        const data = await res.json();
+        document.getElementById("xrpPrice").textContent = `XRP USD: $${data.priceUSD}`;
+      } catch(err) {
+        console.error(err);
+        document.getElementById("xrpPrice").textContent = "Error cargando precio";
+      }
+    }
+
+    loadPrice();
+  </script>
+</body>
+</html>
+
+
+
+
