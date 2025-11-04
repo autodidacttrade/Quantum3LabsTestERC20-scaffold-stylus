@@ -115,6 +115,6 @@ app.get("/", (req, res) => {
 });
 
 // Run Server
-app.listen(PORT, () => console.log(`Servidor running in http://localhost:${PORT}`));
-
+//app.listen(PORT, () => console.log(`Servidor running in http://localhost:${PORT}`));
+app.listen(3000, "0.0.0.0", () => console.log("Server running on port 3000"));
 
