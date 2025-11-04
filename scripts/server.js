@@ -3,8 +3,10 @@ import path from "path";
 import "dotenv/config";
 import { ethers } from "ethers";
 import axios from "axios";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 const PORT = 3000;
 const __dirname = path.resolve();
 
