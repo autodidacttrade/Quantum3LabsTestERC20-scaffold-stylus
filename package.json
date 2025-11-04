@@ -1,6 +1,9 @@
 {
   "name": "Quantum3LabsTestERC20",
   "packageManager": "yarn@3.2.3",
+  "scripts": {
+    "start": "node scripts/server.js"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
